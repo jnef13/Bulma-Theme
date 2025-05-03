@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    {% include 'includes/head.html' %}
-</head>
+{%- block head %}
+    <head>
+        {% include 'includes/head.html' %}
+    </head>
+{%- endblock %}
 
-<body>
-    {{ page.content }}
-    {%- for script in config.extra_javascript %}
-        {{ script | script_tag }}
-    {%- endfor %}
-</body>
+{%- block body %}
+    <body>
+        {%- block content %}
+            {% include 'includes/content.html' %}
+        {%- endblock %}
+        {%- block scripts %}
+            {% include 'includes/scripts.html' %}
+        {%- endblock %}
+    </body>
+{%- endblock %}
 
 </html>
