@@ -1,0 +1,5 @@
+site_name: Bulma Theme
+
+theme:
+  name: null
+  custom_dir: 'bulma-theme/'

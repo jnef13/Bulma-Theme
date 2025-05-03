@@ -1,0 +1,5 @@
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+{%- for path in config.extra_css %}
+    <link href="{{ path | url }}" rel="stylesheet">
+{%- endfor %}
+<link href="{{ 'stylesheets/bulma.min.css'|url }}" rel="stylesheet">

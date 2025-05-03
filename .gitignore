@@ -1,0 +1,9 @@
+# Virtual Enviroments
+.venv
+
+# MKDocs Stuff
+site
+
+# Misc
+.vscode
+.DS_Store
