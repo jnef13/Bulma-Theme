@@ -1,6 +1,6 @@
 # Bulma-Theme
 
-A theme for MKDocs, built using Bulma CSS.
+A theme for MKDocs, built using Bulma CSS. This is my first MKDocs themes, I hope you enjoy it.
 
 ## Features 
 

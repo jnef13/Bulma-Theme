@@ -1,3 +1,15 @@
-<div class="section p-12">
-    {{ page.content }}
+<div class="columns is-desktop">
+    <div class="column is-offset-1">
+        {%- block navbar %}
+            {% include './partials/navbar.html' %}
+        {%- endblock %}
+    </div>
+    <div class="column is-6">
+        {{ page.content }}
+    </div>
+    <div class="column is-offset-1">
+        {%- block toc %}
+            {% include './partials/toc.html' %}
+        {%- endblock %}
+    </div>
 </div>
