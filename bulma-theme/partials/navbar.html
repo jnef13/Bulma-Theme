@@ -1,21 +1,21 @@
 {% if nav|length > 1 %}
-    <ul>
-    {% for nav_item in nav %}
-        {% if nav_item.children %}
-            <li>{{ nav_item.title }}
-                <ul>
-                {% for nav_item in nav_item.children %}
-                    <li class="{% if nav_item.active %}current{% endif %}">
-                        <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-                    </li>
-                {% endfor %}
+    <aside class="menu">
+        <p class="menu-label">Articles</p>
+        {% for nav_item in nav %}
+            {% if nav_item.children %}
+                <ul class="menu-list">
+                    <a>{{ nav_item.title }}</a>
+                    <ul>
+                        {% for nav_item in nav_item.children %}
+                            <a href="{{ nav_item.url|url }}" class="{% if nav_item.active %}is-active{% endif %}">{{ nav_item.title }}</a>
+                        {% endfor %}
+                    </ul>
                 </ul>
-            </li>
-        {% else %}
-            <li class="{% if nav_item.active %}current{% endif %}">
-                <a href="{{ nav_item.url|url }}">{{ nav_item.title }}</a>
-            </li>
-        {% endif %}
-    {% endfor %}
-    </ul>
+            {% else %}
+                <ul class="menu-list">
+                    <a href="{{ nav_item.url|url }}" class="{% if nav_item.active %}is-active{% endif %}">{{ nav_item.title }}</a>
+                </ul>
+            {% endif %}
+        {% endfor %}
+    </aside>
 {% endif %}

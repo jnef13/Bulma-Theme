@@ -1,15 +1,28 @@
-<div class="columns is-desktop">
-    <div class="column is-offset-1">
-        {%- block navbar %}
-            {% include './partials/navbar.html' %}
-        {%- endblock %}
-    </div>
-    <div class="column is-6">
-        {{ page.content }}
-    </div>
-    <div class="column is-offset-1">
-        {%- block toc %}
-            {% include './partials/toc.html' %}
-        {%- endblock %}
+<div class="section p-12">
+    <div class="content">
+        <div class="columns is-6 is-desktop">
+            <div class="column is-3 offset-1">
+                <div class="box">
+                    {%- block navbar %}
+                        {% include './partials/navbar.html' %}
+                    {%- endblock %}
+                </div>
+            </div>
+            <div class="column is-7">
+                {{ page.content }}
+            </div>
+            <div class="column is-2 offset-1">
+                <div class="box">
+                    <aside class="menu">
+                        <p class="menu-label">Table Of Contents</p>
+                        <ul class="menu-list">
+                            {%- block toc %}
+                                {% include './partials/toc.html' %}
+                            {% endblock %}
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
